@@ -16,12 +16,12 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private String adress;
+    private String address;
     private int plz;
     private String place;
 
     private String email; // (kein pflichtfeld)
-    private String telefon; //(kein pflichtfeld)
+    private String telephone; //(kein pflichtfeld)
 
     @OneToMany(mappedBy = "user",orphanRemoval = true)
     private List<Messages> messages;
@@ -29,14 +29,14 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String adress, int plz, String place, String email, String telefon) {
+    public User(String firstName, String lastName, String address, int plz, String place, String email, String telephone) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.adress = adress;
+        this.address = address;
         this.plz = plz;
         this.place = place;
         this.email = email;
-        this.telefon = telefon;
+        this.telephone = telephone;
     }
 
     public long getUser_id() {return user_id;}
@@ -51,9 +51,9 @@ public class User {
 
     public void setLastName(String lastName) {this.lastName = lastName;}
 
-    public String getAdress() {return adress;}
+    public String getAddress() {return address;}
 
-    public void setAdress(String adress) {this.adress = adress;}
+    public void setAddress(String address) {this.address = address;}
 
     public int getPlz() {return plz;}
 
@@ -67,9 +67,9 @@ public class User {
 
     public void setEmail(String email) {this.email = email;}
 
-    public String getTelefon() {return telefon;}
+    public String getTelephone() {return telephone;}
 
-    public void setTelefon(String telefon) {this.telefon = telefon;}
+    public void setTelephone(String telephone) {this.telephone = telephone;}
 
     public List<Messages> getMessages() {return messages;}
 
