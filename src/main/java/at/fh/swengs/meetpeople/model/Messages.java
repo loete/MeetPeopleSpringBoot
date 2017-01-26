@@ -28,6 +28,8 @@ public class Messages {
 
     private String message;
 
+    private String title;
+
     @ManyToOne
     private User user;
 
@@ -37,10 +39,11 @@ public class Messages {
     public Messages(){
     }
 
-    public Messages(Date dayOfMessage, String placeOfMessage, String message) {
+    public Messages(Date dayOfMessage, String placeOfMessage, String message, String title) {
         this.dayOfMessage = dayOfMessage;
         this.placeOfMessage = placeOfMessage;
         this.message = message;
+        this.title = title;
     }
 
     public long getId() {return id;}
@@ -58,6 +61,10 @@ public class Messages {
     public String getMessage() {return message;}
 
     public void setMessage(String message) {this.message = message;}
+
+    public String getTitle() {return title;}
+
+    public void setTitle(String title) {this.title = title;}
 
     public User getUser() {return user;}
 
