@@ -14,14 +14,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long user_id;
 
+    private String userName;
+    private String password;
     private String firstName;
     private String lastName;
-    private String address;
-    private int plz;
     private String place;
 
     private String email; // (kein pflichtfeld)
-    private String telephone; //(kein pflichtfeld)
 
     @OneToMany(mappedBy = "user",orphanRemoval = true)
     private List<Messages> messages;
@@ -29,14 +28,13 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String address, int plz, String place, String email, String telephone) {
+    public User(String firstName, String lastName, String userName, String password, String place, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.plz = plz;
+        this.userName = userName;
+        this.password = password;
         this.place = place;
         this.email = email;
-        this.telephone = telephone;
     }
 
     public long getUser_id() {return user_id;}
@@ -51,13 +49,13 @@ public class User {
 
     public void setLastName(String lastName) {this.lastName = lastName;}
 
-    public String getAddress() {return address;}
+    public String getUserName() {return userName;}
 
-    public void setAddress(String address) {this.address = address;}
+    public void setUserName(String userName) {this.userName = userName;}
 
-    public int getPlz() {return plz;}
+    public String getPassword() {return password;}
 
-    public void setPlz(int plz) {this.plz = plz;}
+    public void setPassword(String password) {this.password = password;}
 
     public String getPlace() {return place;}
 
@@ -66,10 +64,6 @@ public class User {
     public String getEmail() {return email;}
 
     public void setEmail(String email) {this.email = email;}
-
-    public String getTelephone() {return telephone;}
-
-    public void setTelephone(String telephone) {this.telephone = telephone;}
 
     public List<Messages> getMessages() {return messages;}
 
